@@ -1,2 +1,2 @@
-# blue_trade_flutter_example_app
+# blue_trade_app
 Blue Trade - Flutter example app.

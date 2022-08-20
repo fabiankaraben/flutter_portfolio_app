@@ -1,9 +1,9 @@
 import 'dart:async';
 
+import 'package:flutter_portfolio_app/data/models/project.dart';
+import 'package:flutter_portfolio_app/data/providers/project_stream_provider.dart';
+import 'package:flutter_portfolio_app/screens/dashboard/states/dashboard_state.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:blue_trade_app/data/models/project.dart';
-import 'package:blue_trade_app/data/providers/project_stream_provider.dart';
-import 'package:blue_trade_app/screens/dashboard/states/dashboard_state.dart';
 // import 'package:chat_count/chat/model/chat_model.dart';
 // import 'package:chat_count/chat/service/chat_service.dart';
 // import 'package:chat_count/chat/chat_message/state/chat_message_state.dart';

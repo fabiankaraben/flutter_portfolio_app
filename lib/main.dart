@@ -1,7 +1,7 @@
-import 'package:blue_trade_app/app/app.dart';
-import 'package:blue_trade_app/utils/url_strategy/url_strategy.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:flutter_portfolio_app/app/app.dart';
+import 'package:flutter_portfolio_app/utils/url_strategy/url_strategy.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() async {
@@ -20,6 +20,6 @@ void main() async {
   // Run the App
   runApp(
     // Adding ProviderScope enables Riverpod for the entire project
-    const ProviderScope(child: App()),
+    ProviderScope(child: App()),
   );
 }

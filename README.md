@@ -1,2 +1,2 @@
-# blue_trade_app
-Blue Trade - Flutter example app.
+# flutter_portfolio_app
+My portfolio of Flutter demo apps.

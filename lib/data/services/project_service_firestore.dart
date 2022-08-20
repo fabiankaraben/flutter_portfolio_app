@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:blue_trade_app/data/models/project.dart';
-import 'package:blue_trade_app/data/services/project_service.dart';
+import 'package:flutter_portfolio_app/data/models/project.dart';
+import 'package:flutter_portfolio_app/data/services/project_service.dart';
 
 ///
 class ProjectServiceFirestore extends ProjectService {

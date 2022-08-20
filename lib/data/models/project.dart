@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-// import 'package:blue_trade_app/utils/firestore/timestamp_converter.dart';
+// import 'package:flutter_portfolio_app/utils/firestore/timestamp_converter.dart';
 
 part 'project.freezed.dart';
 part 'project.g.dart';

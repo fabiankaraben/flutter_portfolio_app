@@ -1,35 +1,39 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:beamer/beamer.dart';
-import 'package:blue_trade_app/screens/dashboard/dashboard_location.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio_app/app/themes/themes.dart';
+import 'package:flutter_portfolio_app/screens/dashboard/dashboard_location.dart';
 
 /// App Widget
 class App extends StatelessWidget {
   /// App Widget
-  const App({super.key});
+  App({super.key});
+
+  final _routerDelegate = BeamerDelegate(
+    initialPath: DashboardLocation().pathPatterns.first,
+    locationBuilder: BeamerLocationBuilder(
+      beamLocations: [
+        DashboardLocation(),
+      ],
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
-    final _routerDelegate = BeamerDelegate(
-      initialPath: DashboardLocation().pathPatterns.first,
-      locationBuilder: BeamerLocationBuilder(
-        beamLocations: [
-          DashboardLocation(),
-        ],
-      ),
-    );
-
-    return MaterialApp.router(
-      routerDelegate: _routerDelegate,
-      routeInformationParser: BeamerParser(),
-      backButtonDispatcher: BeamerBackButtonDispatcher(
-        delegate: _routerDelegate,
-      ),
-      theme: ThemeData.from(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF034A03),
+    return AdaptiveTheme(
+      light: LightTheme.data,
+      dark: DarkTheme.data,
+      initial: AdaptiveThemeMode.dark,
+      builder: (theme, darkTheme) => MaterialApp.router(
+        routerDelegate: _routerDelegate,
+        routeInformationParser: BeamerParser(),
+        backButtonDispatcher: BeamerBackButtonDispatcher(
+          delegate: _routerDelegate,
         ),
+        theme: theme,
+        darkTheme: darkTheme,
+        debugShowCheckedModeBanner: false,
       ),
-      debugShowCheckedModeBanner: false,
     );
   }
 }

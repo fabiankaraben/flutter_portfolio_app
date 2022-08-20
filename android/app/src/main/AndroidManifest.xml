@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.blue_trade_app">
+    package="com.example.flutter_portfolio_app">
    <application
-        android:label="blue_trade_app"
+        android:label="flutter_portfolio_app"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

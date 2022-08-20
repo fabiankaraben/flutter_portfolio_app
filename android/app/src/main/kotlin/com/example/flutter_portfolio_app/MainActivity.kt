@@ -1,4 +1,4 @@
-package com.example.blue_trade_app
+package com.example.flutter_portfolio_app
 
 import io.flutter.embedding.android.FlutterActivity
 

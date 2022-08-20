@@ -1,4 +1,4 @@
-import 'package:blue_trade_app/data/models/project.dart';
+import 'package:flutter_portfolio_app/data/models/project.dart';
 
 ///
 abstract class ProjectService {

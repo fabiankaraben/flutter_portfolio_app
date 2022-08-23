@@ -1,5 +1,6 @@
 import 'package:blur/blur.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 ///
 class DecoratedBackground extends StatelessWidget {
@@ -25,13 +26,21 @@ class DecoratedBackground extends StatelessWidget {
           child: _GradientBlurredCircle(),
         ),
         Container(
-          margin: const EdgeInsets.all(50),
+          margin: EdgeInsets.all(
+            ResponsiveValue<double>(
+              context,
+              defaultValue: 16,
+              valueWhen: const [
+                Condition.largerThan(name: 'MOBILE_LARGE', value: 30),
+                Condition.largerThan(name: TABLET, value: 50),
+                // Condition.largerThan(name: DESKTOP, value: 50),
+              ],
+            ).value!,
+          ),
           padding: const EdgeInsets.symmetric(horizontal: 24),
           decoration: BoxDecoration(
-            // color: Colors.white.withOpacity(.02),
             color: Theme.of(context).dividerColor.withOpacity(.02),
             border: Border.all(
-              // color: Colors.white.withOpacity(.1),
               color: Theme.of(context).dividerColor.withOpacity(.08),
               width: 2,
             ),

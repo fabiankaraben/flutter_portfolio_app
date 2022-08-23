@@ -19,7 +19,7 @@ class DashboardScreen extends ConsumerWidget {
     return Scaffold(
       body: Scrollbar(
         controller: _mainScrollController,
-        thumbVisibility: true,
+        thumbVisibility: MediaQuery.of(context).size.width > 500,
         child: DecoratedBackground(
           child: ScrollConfiguration(
             behavior: ScrollConfiguration.of(context).copyWith(

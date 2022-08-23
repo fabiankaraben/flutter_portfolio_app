@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 ///
@@ -11,19 +12,41 @@ class HeroSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.end,
+    return ResponsiveRowColumn(
+      layout: ResponsiveValue<ResponsiveRowColumnType>(
+        context,
+        defaultValue: ResponsiveRowColumnType.COLUMN,
+        valueWhen: const [
+          Condition.largerThan(
+            name: MOBILE,
+            value: ResponsiveRowColumnType.ROW,
+          ),
+        ],
+      ).value!,
+      rowCrossAxisAlignment: CrossAxisAlignment.end,
+      columnMainAxisSize: MainAxisSize.min,
       children: [
-        Flexible(
+        ResponsiveRowColumnItem(
+          rowFlex: 1,
+          columnFlex: 1,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
             children: [
               const SizedBox(height: 50),
               DefaultTextStyle(
                 style: GoogleFonts.poppins(
                   color: Theme.of(context).textTheme.bodyText1!.color,
                   fontWeight: FontWeight.bold,
-                  fontSize: 39,
+                  fontSize: ResponsiveValue<double>(
+                    context,
+                    defaultValue: 24,
+                    valueWhen: const [
+                      Condition.largerThan(name: 'MOBILE_LARGE', value: 30),
+                      Condition.largerThan(name: TABLET, value: 34),
+                      Condition.largerThan(name: DESKTOP, value: 39),
+                    ],
+                  ).value,
                 ),
                 child: Wrap(
                   children: [
@@ -64,7 +87,13 @@ class HeroSection extends StatelessWidget {
                 'Suka membangun antarmuka website yang fast-performace dan '
                 'well-design menggunakan teknologi-teknologi terbaru.',
                 style: GoogleFonts.poppins(
-                  fontSize: 17,
+                  fontSize: ResponsiveValue<double>(
+                    context,
+                    defaultValue: 16,
+                    valueWhen: const [
+                      Condition.largerThan(name: TABLET, value: 17),
+                    ],
+                  ).value,
                   height: 1.9,
                 ),
               ),
@@ -89,10 +118,16 @@ class HeroSection extends StatelessWidget {
             ],
           ),
         ),
-        Flexible(
-          child: Center(
-            child: Image.asset(
-              'assets/images/home-developer.png',
+        ResponsiveRowColumnItem(
+          rowFlex: 1,
+          columnFlex: 1,
+          child: ResponsiveVisibility(
+            visible: false,
+            visibleWhen: const [Condition.largerThan(name: MOBILE)],
+            child: Center(
+              child: Image.asset(
+                'assets/images/home-developer.png',
+              ),
             ),
           ),
         ),

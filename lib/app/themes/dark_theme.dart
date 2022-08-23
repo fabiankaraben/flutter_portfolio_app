@@ -19,6 +19,17 @@ class DarkTheme {
       bodyText2: GoogleFonts.poppinsTextTheme().bodyText2!.copyWith(
             color: Colors.white,
           ),
+      button: GoogleFonts.poppinsTextTheme().button!.copyWith(
+            color: Colors.white,
+          ),
     ),
+    // ).copyWith(
+    //   textButtonTheme: TextButtonThemeData(
+    //     style: ButtonStyle(
+    //       textStyle: MaterialStateProperty.resolveWith(
+    //         (states) => const TextStyle(fontSize: 44),
+    //       ),
+    //     ),
+    //   ),
   );
 }

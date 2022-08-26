@@ -1,3 +1,4 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:dotted_decoration/dotted_decoration.dart';
 import 'package:flutter/material.dart';
 import 'package:trackizer_demo_app/app/themes/styles.dart';
@@ -49,7 +50,12 @@ class HeroSection extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    BotToast.showText(
+                      text: 'Feature not yet implemented',
+                      textStyle: Theme.of(context).textTheme.bodyText1!,
+                    );
+                  },
                   child: const Text('See you budget'),
                 ),
               ],
@@ -114,7 +120,6 @@ class _HeroSectionContainer extends StatelessWidget {
       width: double.infinity,
       height: 429,
       decoration: BoxDecoration(
-        // color: CustomColors.gray70,
         gradient: LinearGradient(
           colors: [const Color(0xFF292932), CustomColors.gray70],
           begin: Alignment.topCenter,
@@ -137,7 +142,12 @@ class _HeroSectionContainer extends StatelessWidget {
             top: 15,
             right: 15,
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                BotToast.showText(
+                  text: 'Feature not yet implemented',
+                  textStyle: Theme.of(context).textTheme.bodyText1!,
+                );
+              },
               icon: Icon(
                 TrackizerIcons.settings,
                 color: CustomColors.gray30,

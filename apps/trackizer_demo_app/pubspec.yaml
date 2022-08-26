@@ -12,6 +12,7 @@ dependencies:
   adaptive_theme: ^3.1.1
   beamer: ^1.5.2
   blur: ^3.1.0
+  bot_toast: ^4.0.3
   dotted_decoration: ^2.0.0
   equatable: ^2.0.3
   flutter:
@@ -49,8 +50,8 @@ flutter:
        - asset: assets/fonts/trackizer-icons.ttf
 
 flutter_native_splash:
-  color: "#ffffff"
-  image: assets/images/splash/logo_lockup_flutter_vertical.png
-  color_dark: "#042a49"
-  image_dark: assets/images/splash/logo_lockup_flutter_vertical_wht.png
+  color: "#1C1C23"
+  image: assets/images/splash-logo.png
+  color_dark: "#1C1C23"
+  image_dark: assets/images/splash-logo.png
   fullscreen: true

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:trackizer_demo_app/screens/home/widgets/bottom_bar.dart';
 import 'package:trackizer_demo_app/screens/home/widgets/hero_section.dart';
+import 'package:trackizer_demo_app/screens/home/widgets/service_tabs.dart';
 
 /// Home Screen
 class HomeScreen extends ConsumerWidget {
@@ -15,9 +16,7 @@ class HomeScreen extends ConsumerWidget {
         children: const [
           HeroSection(),
           Expanded(
-            child: SingleChildScrollView(
-              child: Text('List'),
-            ),
+            child: ServiceTabs(),
           ),
           HomeBottomBar(),
         ],
